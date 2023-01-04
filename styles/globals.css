@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --textStroke: #000000;
+    --borderWidth: 1px;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: var(--primary) !important;
+    text-decoration: none !important;
+  }
+  
+  .icon {
+    cursor: pointer;
+    padding:.5rem;
+  }
+  
+  .icon-dt {
+    cursor: pointer;
+    width:10vw;
+  }
+  
+  .icon-nav {
+    cursor: pointer;
+    padding: 1rem;
+  }
+  
+  .grow { transition: all .2s ease-in-out; }
+  .grow:hover { transform: scale(.9); }
+  .avatar-box:hover {
+    cursor: pointer;
+  }
+  
+  .fixed-image {
+    cursor: pointer;
+  }
