@@ -8,35 +8,19 @@ import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
 import ImageCarousel from '../components/ImageCarousel';
 
-const rustFunc = async (a: number, b: number, operation: String) => {
-  const utils = await import("utils.wasm")
-  if (operation === "add") {
-    return utils.add(a, b)
-  } else if (operation === "subtract") {
-    return utils.subtract(a, b)
-  } else if (operation === "multiply") {
-    return utils.multiply(a, b)
-  } else if (operation === "divide") {
-    return utils.divide(a, b)
-  }
-}
-
 const Home: NextPage = (props: any) => {
   return (
     <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: `7.5vh`,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <Box className='page-box'>
         <Typography variant="h4" component="h1" gutterBottom>
           The Third Transformation
         </Typography>
-        <ImageCarousel data={[`/hex.svg`, `/3tf.svg`]} mobile={props.mobile}/>
+        <ImageCarousel data={[
+          `/hex.svg`,
+          `https://www.the-artery.com/assets/landing-page/logo/ArteryLogo.svg`,
+          `https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif`,
+          `https://digiyo.io/logo512.png`
+          ]} mobile={props.mobile}/>
         <ProTip />
         <Copyright />
       </Box>

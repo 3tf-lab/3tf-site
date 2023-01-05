@@ -1,3 +1,4 @@
+console.time('import')
 import { useState, useEffect } from 'react'
 import Head from 'next/head';
 import { useRouter } from 'next/router'
@@ -9,6 +10,8 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from '../styles/theme';
 import createEmotionCache from '../styles/createEmotionCache';
 import '../styles/globals.css'
+import * as wasm from "utils.wasm";
+console.timeEnd('import')
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -19,7 +22,6 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const router = useRouter()
   const mobile = useMediaQuery(theme.breakpoints.down('md'))
-  const [utils, setUtils] = useState<any>(null)
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
@@ -32,14 +34,6 @@ export default function MyApp(props: MyAppProps) {
       router.events.off('routeChangeStart', handleRouteChange)
     }
   }, [router.events])
-
-  useEffect(() => {
-    const importUtils = async () => {
-      const utils = await import("utils.wasm")
-      setUtils(utils)
-    }
-    importUtils()
-  }, [])
   
   return (
     <CacheProvider value={emotionCache}>
@@ -52,7 +46,7 @@ export default function MyApp(props: MyAppProps) {
           key={router.asPath}
           {...pageProps}
           mobile={mobile}
-          utils={utils}
+          utils={wasm}
           />
       </ThemeProvider>
     </CacheProvider>

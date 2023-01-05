@@ -7,4 +7,7 @@ module.exports = {
     config.experiments = { ...config.experiments, asyncWebAssembly: true }
     return config
   },
+  images: {
+    domains: [`digiyo.io`, `www.the-artery.com`]
+  }
 }

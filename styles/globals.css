@@ -26,6 +26,15 @@
     color: var(--primary) !important;
     text-decoration: none !important;
   }
+
+  .page-box {
+    margin-top: 7.5vh;
+    margin-bottom: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
   .icon {
     cursor: pointer;
