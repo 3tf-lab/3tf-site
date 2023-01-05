@@ -19,8 +19,28 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const router = useRouter()
   const mobile = useMediaQuery(theme.breakpoints.down('md'))
+  const [utils, setUtils] = useState<any>(null)
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      console.log(`App is changing to ${url}`)
+    }
+    router.events.on('routeChangeStart', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+    }
+  }, [router.events])
+
+  useEffect(() => {
+    const importUtils = async () => {
+      const utils = await import("utils.wasm")
+      setUtils(utils)
+    }
+    importUtils()
+  }, [])
+  
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -32,6 +52,7 @@ export default function MyApp(props: MyAppProps) {
           key={router.asPath}
           {...pageProps}
           mobile={mobile}
+          utils={utils}
           />
       </ThemeProvider>
     </CacheProvider>

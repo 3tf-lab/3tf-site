@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Carousel from 'react-material-ui-carousel'
 import FixedImage from './FixedImage'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -9,6 +10,7 @@ import CircularLoader from './CircularLoader'
 interface ImageCarouselProps { data: any; mobile: boolean; }
 
 export default function ImageCarousel({ data, mobile }:ImageCarouselProps) {
+    const router = useRouter()
     const theme = useTheme()
     const carouselWidth = mobile ? `100vw` : `${Number(useWindowSize().width /60)}vw`
     return (
@@ -50,7 +52,7 @@ export default function ImageCarousel({ data, mobile }:ImageCarouselProps) {
       
             }}
           >
-            {data.map((item: string, index: number) => <FixedImage key={index} size={mobile ? `100vw` : `50vw`} url={item} alt={`loading...`}/>)}
+            {data.map((item: string, index: number) => <FixedImage key={index} height={500} width={500} size={mobile ? `100vw` : `50vw`} url={item} alt={`loading...`} onClick={() => router.push(`/projects`)}/>)}
           </Carousel>
           :
           <CircularLoader />

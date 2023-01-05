@@ -8,6 +8,19 @@ import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
 import ImageCarousel from '../components/ImageCarousel';
 
+const rustFunc = async (a: number, b: number, operation: String) => {
+  const utils = await import("utils.wasm")
+  if (operation === "add") {
+    return utils.add(a, b)
+  } else if (operation === "subtract") {
+    return utils.subtract(a, b)
+  } else if (operation === "multiply") {
+    return utils.multiply(a, b)
+  } else if (operation === "divide") {
+    return utils.divide(a, b)
+  }
+}
+
 const Home: NextPage = (props: any) => {
   return (
     <Container maxWidth="lg">
