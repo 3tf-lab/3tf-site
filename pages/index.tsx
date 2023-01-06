@@ -4,23 +4,21 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from '../components/Link';
+import Navigation from '../components/Navigation';
+import Title from '../components/Title';
 import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
-import ImageCarousel from '../components/ImageCarousel';
+import ProjectCarousel from '../components/ProjectCarousel';
 
 const Home: NextPage = (props: any) => {
+  console.log('props: ', props)
   return (
     <Container maxWidth="lg">
+      <Navigation alert={props?.alert} mobile={props?.mobile} />
       <Box className='page-box'>
-        <Typography variant="h4" component="h1" gutterBottom>
-          The Third Transformation
-        </Typography>
-        <ImageCarousel data={[
-          `/hex.svg`,
-          `https://www.the-artery.com/assets/landing-page/logo/ArteryLogo.svg`,
-          `https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif`,
-          `https://digiyo.io/logo512.png`
-          ]} mobile={props.mobile}/>
+        {/*<Title variant={"h4"} component={"h1"} gutterBottom={true} sx={{my:6}} title={`3TF`}/>*/}
+        <Typography></Typography>
+        <ProjectCarousel data={Object.entries(props.projects).map((item: any, index: number) => item[1])} mobile={props.mobile}/>
         <ProTip />
         <Copyright />
       </Box>

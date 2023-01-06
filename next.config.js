@@ -8,6 +8,6 @@ module.exports = {
     return config
   },
   images: {
-    domains: [`digiyo.io`, `www.the-artery.com`]
+    domains: [`www.mighty-delivery.com`,`digiyo.io`, `www.the-artery.com`, `sullivanmyer.com`]
   }
 }

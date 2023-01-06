@@ -22,7 +22,7 @@ const theme = createTheme({
       main: red.A400,
     },
     background: {
-      default: '#263238',
+      default: '#000000',
       paper: '#37474f'
     },
     text: {

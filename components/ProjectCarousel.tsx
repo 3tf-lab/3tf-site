@@ -3,13 +3,14 @@ import Carousel from 'react-material-ui-carousel'
 import FixedImage from './FixedImage'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import {useWindowSize} from 'react-use'
 import CircularLoader from './CircularLoader'
 
-interface ImageCarouselProps { data: any; mobile: boolean; }
+interface ProjectCarouselProps { data: any; mobile: boolean; }
 
-export default function ImageCarousel({ data, mobile }:ImageCarouselProps) {
+export default function ProjectCarousel({ data, mobile }:ProjectCarouselProps) {
     const router = useRouter()
     const theme = useTheme()
     const carouselWidth = mobile ? `100vw` : `${Number(useWindowSize().width /60)}vw`
@@ -52,7 +53,13 @@ export default function ImageCarousel({ data, mobile }:ImageCarouselProps) {
       
             }}
           >
-            {data.map((item: string, index: number) => <FixedImage key={index} height={500} width={500} size={mobile ? `100vw` : `50vw`} url={item} alt={`loading...`} onClick={() => router.push(`/projects`)}/>)}
+            {data.map((item: any, index: number) => (
+              <Box className={"carousel-box"}>
+                <Typography variant={'h5'} alignSelf={'center'}>{item.name}</Typography>
+                <FixedImage key={index} height={500} width={500} size={mobile ? `100vw` : `50vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(item.url)}/>
+              </Box>
+            )
+            )}
           </Carousel>
           :
           <CircularLoader />

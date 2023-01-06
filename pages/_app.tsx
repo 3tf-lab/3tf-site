@@ -9,6 +9,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from '../styles/theme';
 import createEmotionCache from '../styles/createEmotionCache';
 import '../styles/globals.css'
+import projectData from '../src/projects';
 //import * as wasm from "utils.wasm";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -21,6 +22,10 @@ export default function MyApp(props: MyAppProps) {
   const router = useRouter()
   const mobile = useMediaQuery(theme.breakpoints.down('md'))
   const [utils, setUtils] = useState<any>(null)
+  //const [projects, setProjects] = useState<any>(projectData)
+  const [alertTitle, setAlertTitle] = useState<any>(null)
+  const [alertMessage, setAlertMessage] = useState<any>(null)
+  const [alertOpen, setAlertOpen] = useState<boolean>(false)
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
@@ -54,6 +59,12 @@ export default function MyApp(props: MyAppProps) {
           {...pageProps}
           mobile={mobile}
           utils={utils}
+          projects={projectData}
+          alert={{
+            alertTitle:alertTitle, setAlertTitle:setAlertTitle,
+            alertMessage:alertMessage, setAlertMessage:setAlertMessage,
+            alertOpen:alertOpen, setAlertOpen:setAlertOpen
+          }}
           />
       </ThemeProvider>
     </CacheProvider>
