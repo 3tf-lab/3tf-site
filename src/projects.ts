@@ -25,7 +25,7 @@ export default {
         "name": "digiYo",
         "description": "digiYo is a sports-focused NFT platform that allows users to create and share digital collectibles. It is built Cadence, Flow, IPFS, Next.js, and AWS.",
         "url": "https://digiyo.io",
-        "github": "github.com/slucasmyer/digiyo",
+        "github": "https://github.com/bats-toi",
         "images": [
             "https://digiyo.io/logo512.png",
             "https://digiyo.io/logo512.png",
@@ -46,8 +46,8 @@ export default {
     "portfolio": {
         "name": "Portfolio",
         "description": "Portfolio is a web app that allows users to create and share 3D models. It is built with React, Next.js, and Three.js.",
-        "url": "https://portfolio.vercel.app",
-        "github": "github.com/slucasmyer/portfolio",
+        "url": "https://sullivanmyer.com",
+        "github": "https://github.com/slucasmyer/Sullivan-Myer-Dot-Com",
         "images": [
             "https://sullivanmyer.com/static/me.jpg",
             "https://sullivanmyer.com/static/me.jpg",
