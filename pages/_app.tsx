@@ -22,7 +22,6 @@ export default function MyApp(props: MyAppProps) {
   const router = useRouter()
   const mobile = useMediaQuery(theme.breakpoints.down('md'))
   const [utils, setUtils] = useState<any>(null)
-  //const [projects, setProjects] = useState<any>(projectData)
   const [alertTitle, setAlertTitle] = useState<any>(null)
   const [alertMessage, setAlertMessage] = useState<any>(null)
   const [alertOpen, setAlertOpen] = useState<boolean>(false)

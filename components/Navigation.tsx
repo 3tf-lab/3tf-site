@@ -62,38 +62,29 @@ export default function Navigation({ alert, mobile }:NavigationProps) {
             </IconButton>
           </Stack>
           <Stack sx={{justifyContent: 'space-around', display:{xs:'none', sm:'flex'}}} direction={"row"}>
-              <Title variant={"h6"} component={"h6"} gutterBottom={false} sx={{my:3}} title={`3TF`}/>
-              <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/buyers`, undefined, {scroll:false})}>BUYERS</Button>
-              <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/sellers`, undefined, {scroll:false})}>SELLERS</Button>
-              <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/resources`, undefined, {scroll:false})}>RESOURCES</Button>
+              <Image alt={"3tf"} src={`/3tf.svg`} width={45} height={45} />
+              <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/projects`, undefined, {scroll:false})}>PROJECTS</Button>
+              <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/services`, undefined, {scroll:false})}>SERVICES</Button>
               <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/about`, undefined, {scroll:false})}>ABOUT</Button>
-              
-              
           </Stack>
           <Drawer anchor="right" open={drawer} onClose={()=> setDrawer(false)}>
             <Box sx={{ p: 2, height: 1 }}>
               <Box sx={{mx:'auto !important'}}>
-              {HomeIcon(router, mobile)}
+              <Image alt={"3tf"} src={`/3tf.svg`} width={45} height={45} />
               </Box>
               <Divider sx={{ mb: 2 }} />
               <Box sx={{ mb: 2 }}>
-                <ListItemButton onClick={() => router.push(`/buyers`, undefined, {scroll:false})}>
+                <ListItemButton onClick={() => router.push(`/projects`, undefined, {scroll:false})}>
                     <ListItemIcon>
                         <AllInclusiveIcon color={"secondary"} />
                     </ListItemIcon>
-                    <ListItemText primary="BUYERS" sx={{color:"var(--secondary)"}} primaryTypographyProps={{variant:'h6'}} />
+                    <ListItemText primary="PROJECTS" sx={{color:"var(--secondary)"}} primaryTypographyProps={{variant:'h6'}} />
                 </ListItemButton>
-                <ListItemButton onClick={() => router.push(`/sellers`, undefined, {scroll:false})}>
+                <ListItemButton onClick={() => router.push(`/services`, undefined, {scroll:false})}>
                     <ListItemIcon>
                         <AllInclusiveIcon color={"secondary"} />
                     </ListItemIcon>
-                    <ListItemText primary="SELLERS" sx={{color:"var(--secondary)"}} primaryTypographyProps={{variant:'h6'}} />
-                </ListItemButton>
-                <ListItemButton onClick={() => router.push(`/resources`, undefined, {scroll:false})}>
-                    <ListItemIcon>
-                        <AllInclusiveIcon color={"secondary"} />
-                    </ListItemIcon>
-                    <ListItemText primary="RESOURCES" sx={{color:"var(--secondary)"}} primaryTypographyProps={{variant:'h6'}} />
+                    <ListItemText primary="SERVICES" sx={{color:"var(--secondary)"}} primaryTypographyProps={{variant:'h6'}} />
                 </ListItemButton>
                 <ListItemButton onClick={() => router.push(`/about`, undefined, {scroll:false})}>
                     <ListItemIcon>
