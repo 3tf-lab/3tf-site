@@ -16,9 +16,9 @@ const Services: NextPage = (props: any) => {
     <Container maxWidth="lg">
       <Navigation alert={props?.alert} mobile={props?.mobile} />
       <Box className='page-box'>
-        {/*<Title variant={"h4"} component={"h1"} gutterBottom={true} sx={{my:6}} title={`3TF`}/>*/}
-        <Typography></Typography>
-        <ProjectCarousel data={Object.entries(props.projects).map((item: any, index: number) => item[1])} mobile={props.mobile}/>
+        <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>
+          SERVICES
+        </Typography>
         <ProTip />
         <Copyright />
       </Box>

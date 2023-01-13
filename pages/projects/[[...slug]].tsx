@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Stack, Container, Typography, Box, Select, TextField, MenuItem, Button } from '@mui/material';
 import Link from '../../components/Link';
+import Navigation from '../../components/Navigation';
 import ProTip from '../../components/ProTip';
 import Copyright from '../../components/Copyright';
 
@@ -31,9 +32,10 @@ const Projects: NextPage = (props: any) => {
   
   return (
     <Container maxWidth="lg">
+      <Navigation alert={props?.alert} mobile={props?.mobile} />
       <Box className='page-box'>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Projects
+        <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>
+          PROJECTS
         </Typography>
         {
         slug 

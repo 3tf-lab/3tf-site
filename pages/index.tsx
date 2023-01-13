@@ -16,8 +16,9 @@ const Home: NextPage = (props: any) => {
     <Container maxWidth="lg">
       <Navigation alert={props?.alert} mobile={props?.mobile} />
       <Box className='page-box'>
-        {/*<Title variant={"h4"} component={"h1"} gutterBottom={true} sx={{my:6}} title={`3TF`}/>*/}
-        <Typography></Typography>
+        <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>
+          THE THIRD TRANSFORMATION
+        </Typography>
         <ProjectCarousel data={Object.entries(props.projects).map((item: any, index: number) => item[1])} mobile={props.mobile}/>
         <ProTip />
         <Copyright />

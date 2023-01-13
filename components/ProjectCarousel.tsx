@@ -7,6 +7,8 @@ import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import {useWindowSize} from 'react-use'
 import CircularLoader from './CircularLoader'
+import Link from './Link';
+import { string } from 'prop-types';
 
 interface ProjectCarouselProps { data: any; mobile: boolean; }
 
@@ -55,8 +57,11 @@ export default function ProjectCarousel({ data, mobile }:ProjectCarouselProps) {
           >
             {data.map((item: any, index: number) => (
               <Box className={"carousel-box"}>
-                <Typography variant={'h5'} alignSelf={'center'}>{item.name}</Typography>
-                <FixedImage key={index} height={500} width={500} size={mobile ? `90vw` : `35vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(item.url)}/>
+                <Typography variant={'h4'} alignSelf={'center'}>
+                  <Link href={item.url}>{item.name}</Link>
+                </Typography>
+                <FixedImage key={index} height={500} width={500} size={mobile ? `90vw` : `35vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(`projects/${item.name}`)}/>
+                <Typography variant={'h5'} alignSelf={'center'}>{item.description}</Typography>
               </Box>
             )
             )}

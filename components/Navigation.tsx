@@ -56,13 +56,13 @@ export default function Navigation({ alert, mobile }:NavigationProps) {
         <AppBar className={'nav-fade'} color={"secondary"} elevation={0}>
           <AlertModal title={alert?.alertTitle} message={alert?.alertMessage} open={alert?.alertOpen} setOpen={alert?.setAlertOpen}/>
           <Stack sx={{justifyContent: 'space-between', display:{xs:'flex', sm:'none'}}} direction={"row"}>
-          <Image alt={"3tf"} src={`/3tf.svg`} width={45} height={45} />
+          <Image className={'fixed-image'} alt={"3tf"} src={`/3tf.svg`} width={45} height={45} onClick={() => router.push(`/`, undefined, {scroll:false})}/>
             <IconButton onClick={()=>{drawer ? setDrawer(false) : setDrawer(true)}}>
               <MenuIcon fontSize={'large'} sx={{color:'white'}}/>
             </IconButton>
           </Stack>
           <Stack sx={{justifyContent: 'space-around', display:{xs:'none', sm:'flex'}}} direction={"row"}>
-              <Image alt={"3tf"} src={`/3tf.svg`} width={45} height={45} />
+              <Image className={'fixed-image'} alt={"3tf"} src={`/3tf.svg`} width={45} height={45} onClick={() => router.push(`/`, undefined, {scroll:false})}/>
               <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/projects`, undefined, {scroll:false})}>PROJECTS</Button>
               <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/services`, undefined, {scroll:false})}>SERVICES</Button>
               <Button variant={"text"} sx={buttonStyle} onClick={()=>router.push(`/about`, undefined, {scroll:false})}>ABOUT</Button>
@@ -70,7 +70,7 @@ export default function Navigation({ alert, mobile }:NavigationProps) {
           <Drawer anchor="right" open={drawer} onClose={()=> setDrawer(false)}>
             <Box sx={{ p: 2, height: 1 }}>
               <Box sx={{mx:'auto !important'}}>
-              <Image alt={"3tf"} src={`/3tf.svg`} width={45} height={45} />
+              <Image className={'fixed-image'} alt={"3tf"} src={`/3tf.svg`} width={85} height={85} onClick={() => router.push(`/`, undefined, {scroll:false})}/>
               </Box>
               <Divider sx={{ mb: 2 }} />
               <Box sx={{ mb: 2 }}>
