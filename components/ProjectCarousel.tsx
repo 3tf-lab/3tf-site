@@ -18,9 +18,9 @@ export default function ProjectCarousel({ data, mobile }:ProjectCarouselProps) {
       data ? 
         <Carousel
             sx={{
-              minWidth: {xs:`100vw`, sm:`50vw`},
-              width:{xs:`100vw`, sm:`50vw`},
-              maxWidth: {xs:`100vw`, sm:`50vw`}
+              minWidth: {xs:`90vw`, sm:`35vw`},
+              width:{xs:`90vw`, sm:`35vw`},
+              maxWidth: {xs:`90vw`, sm:`35vw`}
             }}
             autoPlay={false}
             fullHeightHover={false}
@@ -56,7 +56,7 @@ export default function ProjectCarousel({ data, mobile }:ProjectCarouselProps) {
             {data.map((item: any, index: number) => (
               <Box className={"carousel-box"}>
                 <Typography variant={'h5'} alignSelf={'center'}>{item.name}</Typography>
-                <FixedImage key={index} height={500} width={500} size={mobile ? `100vw` : `50vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(item.url)}/>
+                <FixedImage key={index} height={500} width={500} size={mobile ? `90vw` : `35vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(item.url)}/>
               </Box>
             )
             )}
