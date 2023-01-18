@@ -20,6 +20,7 @@ interface MyAppProps extends AppProps {
 }
 
 export default function MyApp(props: MyAppProps) {
+  console.log('app')
   const router = useRouter()
   const mobile = useMediaQuery(theme.breakpoints.down('md'))
   const [utils, setUtils] = useState<any>(null)
