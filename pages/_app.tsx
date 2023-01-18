@@ -10,6 +10,7 @@ import theme from '../styles/theme';
 import createEmotionCache from '../styles/createEmotionCache';
 import '../styles/globals.css'
 import projectData from '../src/projects';
+import serviceData from '../src/services';
 //import * as wasm from "utils.wasm";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -59,6 +60,7 @@ export default function MyApp(props: MyAppProps) {
           mobile={mobile}
           utils={utils}
           projects={projectData}
+          services={serviceData}
           alert={{
             alertTitle:alertTitle, setAlertTitle:setAlertTitle,
             alertMessage:alertMessage, setAlertMessage:setAlertMessage,
