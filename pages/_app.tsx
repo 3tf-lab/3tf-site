@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head';
+import Script from 'next/script'
 import { useRouter } from 'next/router'
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
@@ -11,6 +12,7 @@ import createEmotionCache from '../styles/createEmotionCache';
 import '../styles/globals.css'
 import projectData from '../src/projects';
 import serviceData from '../src/services';
+import * as gtag from '../lib/gtag'
 //import * as wasm from "utils.wasm";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -32,11 +34,13 @@ export default function MyApp(props: MyAppProps) {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      console.log(`App is changing to ${url}`)
+      gtag.pageview(url)
     }
-    router.events.on('routeChangeStart', handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChange)
+    router.events.on('hashChangeComplete', handleRouteChange)
     return () => {
-      router.events.off('routeChangeStart', handleRouteChange)
+      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off('hashChangeComplete', handleRouteChange)
     }
   }, [router.events])
 
@@ -53,6 +57,24 @@ export default function MyApp(props: MyAppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Component

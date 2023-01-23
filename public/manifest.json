@@ -1,0 +1,17 @@
+{
+    "short_name": "3TF",
+    "name": "The-Third-Transformation",
+    "icons": [
+        {
+            "src": "3tf.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ],
+    "start_url": ".",
+    "id":"/",
+    "display": "standalone",
+    "theme_color": "#6200ea",
+    "background_color": "#000000"
+  }
