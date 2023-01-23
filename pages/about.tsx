@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -14,6 +15,7 @@ const About: NextPage = (props: any) => {
   console.log('props: ', props)
   return (
     <Container maxWidth="lg">
+      <Head><title>About</title></Head>
       <Navigation alert={props?.alert} mobile={props?.mobile} />
       <Box className='page-box'>
         <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>
