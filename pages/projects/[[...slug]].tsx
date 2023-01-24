@@ -3,8 +3,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Stack, Container, Typography, Box, Select, TextField, MenuItem, Button } from '@mui/material';
-import Link from '../../components/Link';
 import Navigation from '../../components/Navigation';
+import ProjectCarousel from '../../components/ProjectCarousel';
 import ProTip from '../../components/ProTip';
 import Copyright from '../../components/Copyright';
 
@@ -36,27 +36,8 @@ const Projects: NextPage = (props: any) => {
       <Head><title>Projects</title></Head>
       <Navigation alert={props?.alert} mobile={props?.mobile} />
       <Box className='page-box'>
-        <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>
-          PROJECTS
-        </Typography>
-        {
-        slug 
-        ? 
-        (Object.keys(slug).map((key: String, index: number) => (
-          <Typography key={`${index}`}>{slug[index]}</Typography>
-        )))
-        :
-        <Typography>Free of Slugs</Typography>
-        }
-        <Stack spacing={2}>
-          <Select label={"Operation"} value={operation} onChange={(e) => setOperation(e.target.value)}>
-            {operations.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
-          </Select>
-          <TextField label={"X"} type={"number"} value={a} onChange={(e) => setA(Number(e.target.value))}/>
-          <TextField disabled={operation === "fibonacci"} label={"Y"} type={"number"} value={b} onChange={(e) => setB(Number(e.target.value))}/>
-          <Button variant={"outlined"} onClick={async () => setResult(await rustFunc(props.utils, a, b, operation))}>Compute</Button>
-          <Typography variant="h4" component="h1" gutterBottom> RESULT: {result}</Typography>
-        </Stack>
+        <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>PROJECTS</Typography>
+        <ProjectCarousel data={Object.entries(props.projects).map((item: any, index: number) => item[1])} mobile={props.mobile}/>
         <ProTip />
         <Copyright />
       </Box>

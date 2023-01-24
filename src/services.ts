@@ -10,13 +10,14 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
+import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import LinkIcon from '@mui/icons-material/Link';
 import InsightsIcon from '@mui/icons-material/Insights';
 
 export default {
     "api": {
         "service": "API",
-        "description": "Our API building services provide expert guidance and support to organizations looking to build and deploy API's (Application Programming Interface) for their systems and applications. API's are a set of protocols, routines, and tools for building software and applications. We work with clients to understand their unique needs and challenges, and develop a customized plan to help them build and deploy API's that meet their requirements. Our API building services include consulting on the best practices and standards for API development, design and development of API's, and implementation of API management solutions. We have expertise in various API development frameworks and technologies such as REST, GraphQL and gRPC, and can help to ensure a secure and scalable API infrastructure. We work with clients to implement the API's and strategies developed through our services, and provide ongoing support to ensure their success. We use various project management methodologies such as Agile, Scrum, and Waterfall to ensure that projects are delivered on-time and within budget. Our API building services also include training and coaching to help clients build the skills and capability to sustain the changes and improvements made. We also provide support on the compliance, security and performance aspects of API development and management. With our API building services, clients can achieve improved connectivity, automation and scalability, and tap into the potential of API's to drive their business forward.",
+        "description": "Expert guidance and support to organizations looking to build and deploy API's (Application Programming Interface) for their systems and applications.#We work with clients to understand their unique needs and challenges, and develop a customized plan to help them build and deploy API's that meet their requirements. Our API building services include consulting on the best practices and standards for API development, design and development of API's, and implementation of API management solutions. We have expertise in various API development frameworks and technologies such as REST, GraphQL and gRPC, and can help to ensure a secure and scalable API infrastructure. We work with clients to implement the API's and strategies developed through our services, and provide ongoing support to ensure their success. We use various project management methodologies such as Agile, Scrum, and Waterfall to ensure that projects are delivered on-time and within budget. Our API building services also include training and coaching to help clients build the skills and capability to sustain the changes and improvements made. We also provide support on the compliance, security and performance aspects of API development and management. With our API building services, clients can achieve improved connectivity, automation and scalability, and tap into the potential of API's to drive their business forward.",
         "examples": [
             {"name": "3tf", "url": "https://api.thethirdtransformation.com"},
             {"name": "3tf", "url": "https://api.thethirdtransformation.com"},
@@ -120,7 +121,7 @@ export default {
             {"name": "Next.js", "url": "https://nextjs.org/"},
             {"name": "AWS", "url": "https://aws.amazon.com/"}
         ],
-        "icon": CloudOutlinedIcon
+        "icon": CloudUploadOutlinedIcon
     },
     "blockchain": {
         "service": "Blockchain",

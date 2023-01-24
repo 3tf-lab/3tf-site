@@ -36,6 +36,13 @@
     align-items: center;
   }
 
+  .centered-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .carousel-box {
     display: flex;
     flex-direction: column;

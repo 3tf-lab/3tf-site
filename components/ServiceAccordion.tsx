@@ -29,7 +29,6 @@ export default function ServiceAccordion({ services }:ServiceAccordionProps) {
               expanded={expanded === index}
               onChange={handleChange(index)}
               color={`green`}
-              sx={{ backgroundColor: `#000000` }}
             >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
