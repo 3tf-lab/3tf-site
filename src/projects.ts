@@ -13,6 +13,7 @@ export default {
         "url": "https://www.mighty-delivery.com",
         "github": "github.com/mighty-lab",
         "images": [
+            "/laydown.gif",
             "https://www.mighty-delivery.com/laydown.gif",
             "https://www.mighty-delivery.com/logo-green.svg",
             "https://www.mighty-delivery.com/logo-white.svg"
@@ -54,6 +55,7 @@ export default {
         "url": "https://www.the-artery.com",
         "github": "https://github.com/the-artery-lab",
         "images": [
+            "/film_obj_v1.gif",
             "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif",
             "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif",
             "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif"
@@ -75,6 +77,7 @@ export default {
         "url": "https://www.the-artery.com",
         "github": "https://github.com/procura-lab",
         "images": [
+            "/film_obj_v1.gif",
             "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif",
             "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif",
             "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif"

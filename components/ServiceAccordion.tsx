@@ -36,7 +36,7 @@ export default function ServiceAccordion({ services }:ServiceAccordionProps) {
               id={`${index}-summary`}
             >
               <Stack direction={"row"} spacing={1}>
-                <item.icon />
+                <item.icon fontSize={`large`} />
                 <Typography>{item.service}</Typography>
               </Stack>
             
