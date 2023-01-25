@@ -38,6 +38,15 @@ const Projects: NextPage = (props: any) => {
       <Box className='page-box'>
         <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>PROJECTS</Typography>
         <ProjectCarousel data={Object.entries(props.projects).map((item: any, index: number) => item[1])} mobile={props.mobile}/>
+        <Stack>
+        {Object.entries(props.projects).map((item: any, index: number) => (
+          <Stack key={`project-k-${index}`} direction={`column`} spacing={2}>
+
+            <Typography variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>{item[1].name}</Typography>
+            <Typography variant={props.mobile ? "body1" : "body2"} component="p" gutterBottom>{item[1].description}</Typography>
+          </Stack>
+        ))}
+        </Stack>
         <ProTip />
         <Copyright />
       </Box>
