@@ -49,6 +49,7 @@ export default function ServiceAccordion({ services }:ServiceAccordionProps) {
                 </Typography>
               )}
             </Stack>
+            <Typography variant={`h6`} sx={{mt:4}} gutterBottom>Tools</Typography>
             <List>
               {item.tools.map((tool: any, tid: number) =>
                 <Stack direction={`column`} spacing={0}>

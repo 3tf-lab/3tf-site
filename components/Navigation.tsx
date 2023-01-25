@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { Typography, Box, Button, IconButton, AppBar, Stack, Drawer, Divider, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import { Typography, Box, Button, IconButton, AppBar, Stack, Drawer, Divider, ListItemButton, ListItemIcon, ListItemText, Slide, useScrollTrigger } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import Title from './Title'
 import AllInclusiveIcon from '@mui/icons-material/AllInclusive'
@@ -21,33 +21,14 @@ const buttonStyle = {
   fontWeight: 'bold'
 }
 
-const HomeIcon = (router:any, mobile: boolean) => <Image
-  className={'fixed-image'}
-  height={200}
-  width={200}
-  src={`/hex.svg`}
-  alt={`3TF`}
-  sizes={`2.5vw`}
-  style={{
-      minWidth: mobile ? `10vw` : `2.5vw`,
-      width: mobile ? `10vw` : `2.5vw`, 
-      maxWidth: mobile ? `10vw` : `2.5vw`,
-      minHeight: mobile ? `10vw` : `2.5vw`,
-      height: mobile ? `10vw` : `2.5vw`,
-      maxHeight: mobile ? `10vw` : `2.5vw`,
-  }}
-  role={'button'}
-  onClick={() => router.push(`/`, undefined, {scroll:false})}
-/>
-
 export default function Navigation({ alert, mobile }:NavigationProps) {
     const router = useRouter()
     const theme = useTheme()
+    const trigger = useScrollTrigger()
     const [drawer, setDrawer] = useState<boolean>(false)
     const [authed, setAuthed] = useState<boolean>(false)
 
     useEffect(() => {
-      
       return () => {
         setDrawer(false)
         setAuthed(authed)
@@ -55,6 +36,7 @@ export default function Navigation({ alert, mobile }:NavigationProps) {
     },[])
     
     return (
+      <Slide appear={false} direction="down" in={!trigger}>
         <AppBar className={'nav-fade'} color={"secondary"} elevation={0}>
           <AlertModal title={alert?.alertTitle} message={alert?.alertMessage} open={alert?.alertOpen} setOpen={alert?.setAlertOpen}/>
           <Stack sx={{justifyContent: 'space-between', display:{xs:'flex', sm:'none'}}} direction={"row"}>
@@ -98,5 +80,6 @@ export default function Navigation({ alert, mobile }:NavigationProps) {
             </Box>
           </Drawer>
         </AppBar>
+      </Slide>
     )
 }
