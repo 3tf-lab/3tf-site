@@ -10,12 +10,11 @@ import CircularLoader from './CircularLoader'
 import Link from './Link';
 import { string } from 'prop-types';
 
-interface ProjectCarouselProps { data: any; mobile: boolean; }
+interface ProjectCarouselProps { data: any; mobile: boolean; landing: boolean; }
 
-export default function ProjectCarousel({ data, mobile }:ProjectCarouselProps) {
+export default function ProjectCarousel({ data, mobile, landing }:ProjectCarouselProps) {
     const router = useRouter()
     const theme = useTheme()
-    const carouselWidth = mobile ? `100vw` : `${Number(useWindowSize().width /60)}vw`
     return (
       data ? 
         <Carousel
@@ -60,7 +59,7 @@ export default function ProjectCarousel({ data, mobile }:ProjectCarouselProps) {
                 <Typography variant={'h4'} alignSelf={'center'}>
                   <Link href={item.url}>{item.name}</Link>
                 </Typography>
-                <FixedImage key={index} height={500} width={500} size={mobile ? `90vw` : `35vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(`projects/${item.name}`)}/>
+                <FixedImage key={index} height={500} width={500} size={mobile ? `90vw` : `35vw`} url={item?.images[0]} alt={`loading...`} onClick={() => router.push(`${landing ? `projects/` : ``}${item.name}`)}/>
                 <Typography variant={'h5'} alignSelf={'center'}>{item.description}</Typography>
               </Box>
             )

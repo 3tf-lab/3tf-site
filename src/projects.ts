@@ -11,12 +11,9 @@ export default {
             "AWS"
         ],
         "url": "https://www.mighty-delivery.com",
-        "github": "github.com/mighty-lab",
+        "github": "https://github.com/mighty-lab",
         "images": [
-            "/laydown.gif",
-            "https://www.mighty-delivery.com/laydown.gif",
-            "https://www.mighty-delivery.com/logo-green.svg",
-            "https://www.mighty-delivery.com/logo-white.svg"
+            "/laydown.gif"
         ]
     },
     "digiyo": {
@@ -37,9 +34,7 @@ export default {
         "url": "https://digiyo.io",
         "github": "https://github.com/bats-toi",
         "images": [
-            "https://digiyo.io/logo512.png",
-            "https://digiyo.io/logo512.png",
-            "https://digiyo.io/logo512.png"
+            "/logo512.png"
         ]
     },
     "artery": {
@@ -55,10 +50,7 @@ export default {
         "url": "https://www.the-artery.com",
         "github": "https://github.com/the-artery-lab",
         "images": [
-            "/film_obj_v1.gif",
-            "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif",
-            "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif",
-            "https://www.the-artery.com/assets/landing-page/gifs/desktop/film_obj_v1.gif"
+            "/ArteryLogo.svg"
         ]
     },
     "procura": {
@@ -77,7 +69,7 @@ export default {
         "url": "https://www.the-artery.com",
         "github": "https://github.com/procura-lab",
         "images": [
-            "/hex.svg"
+            "/triangle.svg"
         ]
     },
     "3tf": {
@@ -94,7 +86,7 @@ export default {
         "url": "https://www.thethirdtransformation.com",
         "github": "github.com/slucasmyer/3tf-site",
         "images": [
-            "/triangle.svg",
+            "/3tf.svg",
             "/inverted-triangle.svg",
             "/hex.svg"
         ]
@@ -111,8 +103,6 @@ export default {
         "url": "https://sullivanmyer.com",
         "github": "https://github.com/slucasmyer/Sullivan-Myer-Dot-Com",
         "images": [
-            "https://sullivanmyer.com/static/me.jpg",
-            "https://sullivanmyer.com/static/me.jpg",
             "https://sullivanmyer.com/static/me.jpg"
         ]
     }
