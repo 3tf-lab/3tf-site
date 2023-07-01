@@ -29,21 +29,21 @@ const Projects: NextPage = (props: any) => {
         ?
         <Stack key={`project-hero-stack`} direction={`column`} spacing={2}>
           <Typography alignSelf={`center`} variant={props.mobile ? "h6" : "h4"} component="h1" gutterBottom>{project.name}</Typography>
-          <FixedImage key={slug[0]} height={500} width={500} size={props.mobile ? `90vw` : `45vw`} url={props.projects[slug[0].toLowerCase()]?.images[0]} alt={`loading...`} onClick={() => router.push(`${project.url}`)}/>
-          <Typography variant={props.mobile ? "subtitle2" : "subtitle1"} component="p" gutterBottom>{props.projects[slug[0].toLowerCase()].description}</Typography>
+          <FixedImage key={slug[0]} height={500} width={500} size={props.mobile ? `90vw` : `45vw`} url={project.images[0]} alt={`loading...`} onClick={() => router.push(`${project.url}`)}/>
+          <Typography variant={props.mobile ? "subtitle2" : "subtitle1"} component="p" gutterBottom>{project.description}</Typography>
           <Typography variant={props.mobile ? "h6" : "h4"} component="p" gutterBottom>
             <Link href={project.github}>CODE ARCHIVE</Link>
           </Typography>
           <Typography variant={props.mobile ? "h6" : "h4"} sx={{mt:4}} gutterBottom>Tools</Typography>
           <List>
-              {props.projects[slug[0].toLowerCase()].tools.map((tool: any, tid: number) =>
+              {project.tools.map((tool: any, tid: number) =>
                 <Stack direction={`column`} spacing={0}>
                     <ListItem key={`project-${tool}-link-${tid}`}>
                       <ListItemButton component="a" href={tool.url}>
                         <ListItemIcon>
                           <ArrowForwardIosIcon color={'primary'} />
                         </ListItemIcon>
-                        <ListItemText primary={tool} />
+                        <ListItemText primary={tool.name} />
                       </ListItemButton>
                     </ListItem>
                   <Divider color={`primary`}/>
