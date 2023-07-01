@@ -1,5 +1,6 @@
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 export default function TriangleIcon(props: SvgIconProps) {
+    console.log(props);
     return (
         <SvgIcon {...props}>
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"  viewBox="0 0 800 800">
